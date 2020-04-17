@@ -61,11 +61,7 @@ class SugarAPIAdapter
 
     /**
      * @return array
-     * @throws \Symfony\Contracts\HttpClient\Exception\ClientExceptionInterface
-     * @throws \Symfony\Contracts\HttpClient\Exception\DecodingExceptionInterface
-     * @throws \Symfony\Contracts\HttpClient\Exception\RedirectionExceptionInterface
-     * @throws \Symfony\Contracts\HttpClient\Exception\ServerExceptionInterface
-     * @throws \Symfony\Contracts\HttpClient\Exception\TransportExceptionInterface
+     * @throws \Exception
      */
     public function serchContact(): array
     {
@@ -147,7 +143,7 @@ class SugarAPIAdapter
                 'oauth-token' => $this->token
             ]
         ]);
-        $response = $client->request('GET', $this->base_url . '/Contacts/' .$id, [
+        $response = $client->request('GET', $this->base_url . '/Contacts/' . $id, [
             'json' => [
             ]
         ]);
